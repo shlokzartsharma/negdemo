@@ -4,7 +4,8 @@
   "description": "the first page rendered. placeholder and signup sheet for negotiators who are interested",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "heroku-postbuild": "npm install --production"
   },
   "author": "Shlok Sharma",
   "license": "ISC",
