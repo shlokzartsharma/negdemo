@@ -4,7 +4,9 @@ var morgan = require('morgan');
 var Signuper = require('./models/signuper');
 var validator = require('validator');
 var nodemailer = require('nodemailer');
+require('dotenv').config()
 
+var port = process.env.PORT || 8000
 
 
 
@@ -63,4 +65,4 @@ app.get('/thanks', (req, res) => {
 })
 
 
-app.listen(8000, () => console.log('App started on port 8000'));
+app.listen(port, () => console.log('App started on port ' + port));
