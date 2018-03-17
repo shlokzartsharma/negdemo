@@ -40,8 +40,8 @@ app.route('/')
         port: 465,
         secure: true,
         auth: {
-          user: 'negitdown@gmail.com',
-          pass: 'negnegnegitdown231'
+          user: process.env.email,
+          pass: process.env.emailpass
         }
       });
       let mailOptions = {
