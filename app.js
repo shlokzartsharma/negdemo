@@ -33,8 +33,8 @@ app.route('/')
         port: 465,
         secure: true,
         auth: {
-          user: process.env.email,
-          pass: process.env.emailpass
+          user: process.env.EMAIL,
+          pass: process.env.EMAILPASS
         }
       });
       let mailOptions = {
