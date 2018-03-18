@@ -1,13 +1,11 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var Signuper = require('./models/signuper');
 var validator = require('validator');
 var nodemailer = require('nodemailer');
 require('dotenv').config()
 
 var port = process.env.PORT || 8000
-
 
 
 
@@ -28,13 +26,8 @@ app.route('/')
         res.render('index.ejs');
     })
   .post((req, res) => {
-      Signuper.create({
-          username: req.body.name,
-          email: req.body.email
-      })
 
-  .then(user => {
-      res.redirect('/thanks');
+      res.render('thanks.ejs', {name: req.body.name});
       let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
@@ -56,7 +49,6 @@ app.route('/')
         }
         console.log('Message sent', info.messageId, info.response);
       });
-    });
 
 });
 
