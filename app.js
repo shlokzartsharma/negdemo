@@ -3,13 +3,14 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var validator = require('validator');
 var nodemailer = require('nodemailer');
-require('dotenv').config()
+var favicon = require('serve-favicon');
 
 var port = process.env.PORT || 8000
 
 
 
 var app = express();
+app.use(favicon('favicon.ico'));
 
 app.set('view engine', 'ejs');
 
@@ -19,7 +20,6 @@ app.set('port', 8000);
 app.use(morgan('dev'));
 
 app.use(bodyParser.urlencoded({ extended: true}));
-
 
 app.route('/')
   .get((req, res) => {
