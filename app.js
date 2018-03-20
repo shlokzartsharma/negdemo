@@ -3,14 +3,12 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var validator = require('validator');
 var nodemailer = require('nodemailer');
-var favicon = require('serve-favicon');
 
 var port = process.env.PORT || 8000
 
 
 
 var app = express();
-app.use(favicon('favicon.ico'));
 
 app.set('view engine', 'ejs');
 
