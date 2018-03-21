@@ -18,7 +18,7 @@ app.use(morgan('dev'));
 
 app.use(bodyParser.urlencoded({ extended: true}));
 
-app.use(favicon(path.join(__dirname, + "public/images/favicon.ico")));
+app.use(favicon(path.join(__dirname + "public/images/favicon.ico")));
 
 app.route('/')
   .get((req, res) => {
