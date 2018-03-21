@@ -3,9 +3,7 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var validator = require('validator');
 var nodemailer = require('nodemailer');
-
-var port = process.env.PORT || 8000
-
+var favicon = require('serve-favicon');
 
 
 var app = express();
@@ -18,6 +16,8 @@ app.set('port', 8000);
 app.use(morgan('dev'));
 
 app.use(bodyParser.urlencoded({ extended: true}));
+
+app.use(favicon(path.join(__dirname, + 'public/images/favicon.ico');))
 
 app.route('/')
   .get((req, res) => {
