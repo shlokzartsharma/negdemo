@@ -4,7 +4,7 @@ var morgan = require('morgan');
 var validator = require('validator');
 var nodemailer = require('nodemailer');
 
-port = 8000 || process.env.port;
+port = process.env.PORT || 8000;
 
 var app = express();
 
